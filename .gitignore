@@ -1,0 +1,14 @@
+*.md
+*.gradle
+*.css
+*.html
+*.json
+*.class
+*.bin
+*.js
+*.xml
+*.iml
+*.idx
+
+
+/.idea/
