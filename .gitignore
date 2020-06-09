@@ -9,6 +9,8 @@
 *.xml
 *.iml
 *.idx
+*.classpath
+*.project
 
-
+*/.settings/
 /.idea/
