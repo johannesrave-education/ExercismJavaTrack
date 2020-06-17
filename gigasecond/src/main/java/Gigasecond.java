@@ -2,17 +2,18 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Gigasecond {
-    private LocalDateTime instant;
+    static final long billion = 1_000_000_000l;
+    private LocalDateTime aBillionSecondsLater;
 
     public Gigasecond(LocalDate moment) {
-        this.instant = moment.atStartOfDay();
+        this(moment.atStartOfDay());
     }
 
     public Gigasecond(LocalDateTime moment) {
-        this.instant = moment;
+        this.aBillionSecondsLater = moment.plusSeconds(billion);
     }
 
     public LocalDateTime getDateTime() {
-        return instant.plusSeconds(1000000000l);
+        return aBillionSecondsLater;
     }
 }
