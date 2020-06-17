@@ -2,8 +2,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Gigasecond {
-    static final long billion = 1_000_000_000l;
-    private LocalDateTime aBillionSecondsLater;
+    static final long billion = 1_000_000_000L;
+    final private LocalDateTime aBillionSecondsLater;
 
     public Gigasecond(LocalDate moment) {
         this(moment.atStartOfDay());
