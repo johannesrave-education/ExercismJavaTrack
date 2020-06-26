@@ -1,3 +1,3 @@
 # ExercismJavaTrack
 
-These are my solutions for the java track on execrism.io.
+These are my solutions for the java track on exercism.io.
