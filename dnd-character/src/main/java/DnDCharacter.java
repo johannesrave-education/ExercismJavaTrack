@@ -21,7 +21,7 @@ class DnDCharacter {
     }
 
     int ability() {
-        return IntStream.range(0,4).map(i -> throwDie(6)).sorted().skip(0).sum();
+        return IntStream.range(0,4).map(i -> throwDie(6)).sorted().skip(1).sum();
     }
 
     int modifier(int input) {
@@ -29,6 +29,10 @@ class DnDCharacter {
         return (int) Math.floor((input - 10d) / 2d);
     }
     
+    int throwDie(int sides){
+        return (int) Math.ceil(Math.random() * sides);
+    }
+
     public int getStrength() {
         return strength;
     }
@@ -55,11 +59,5 @@ class DnDCharacter {
 
     int getHitpoints() {
         return hitpoints;
-    }
-    
-    int throwDie(int sides){
-        System.out.println("Rolled a "+((int) (Math.random() * sides) + 1));
-        return (int) (Math.random() * sides) + 1;
-        
     }
 }
