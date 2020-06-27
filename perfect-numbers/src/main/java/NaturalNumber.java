@@ -2,7 +2,7 @@ import java.util.HashSet;
 
 class NaturalNumber {
     
-    private final Classification c;
+    private final int number;
     HashSet<Integer> divisors = new HashSet<>();
 
 
@@ -11,6 +11,7 @@ class NaturalNumber {
             throw new IllegalArgumentException("You must supply a natural number (positive integer)");
         }
         
+        this.number = number;
         for (int i = 1; i <= number/2; i++) {
             if (number % i == 0 && !divisors.contains(i)) {
                 divisors.add(i);
@@ -18,14 +19,14 @@ class NaturalNumber {
             }
         }
         divisors.remove(number);
-        
-        Integer sum = divisors.stream().reduce(Integer::sum).orElse(0);
-        if (sum > number) c = Classification.ABUNDANT;
-        else if (sum < number) c = Classification.DEFICIENT;
-        else c = Classification.PERFECT;
     }
     
     public Classification getClassification(){
-        return c;
+        Integer sum = divisors.stream().reduce(Integer::sum).orElse(0);
+        
+        return
+            (sum > number) ? Classification.ABUNDANT :
+            (sum < number) ? Classification.DEFICIENT : 
+            Classification.PERFECT;
     }
 }
