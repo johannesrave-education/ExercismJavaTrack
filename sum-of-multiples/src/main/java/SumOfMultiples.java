@@ -1,11 +1,21 @@
 class SumOfMultiples {
+    
+    private int number;
+    private final int[] SET;
 
     SumOfMultiples(int number, int[] set) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        this.number = number;
+        SET = set;
     }
 
     int getSum() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        int accumulator = 0;
+        while ((number-1) > 0){
+            for (int divisor: SET){
+                if ((number-1) % divisor == 0) accumulator += number-1;
+            }
+            number--;
+        }
+        return accumulator;
     }
-
 }
