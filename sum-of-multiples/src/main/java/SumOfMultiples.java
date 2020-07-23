@@ -1,21 +1,31 @@
+import java.util.HashSet;
+
 class SumOfMultiples {
     
-    private int number;
+    private final int NUMBER;
     private final int[] SET;
+    private final HashSet<Integer> multiples = new HashSet<Integer>();
 
     SumOfMultiples(int number, int[] set) {
-        this.number = number;
-        SET = set;
+        this.NUMBER = number;
+        this.SET = set;
     }
 
-    int getSum() {
-        int accumulator = 0;
-        while ((number-1) > 0){
+    public int getSum() {
+        int candidate = NUMBER - 1;
+        while ((candidate) > 0){
             for (int divisor: SET){
-                if ((number-1) % divisor == 0) accumulator += number-1;
+                if (divisor == 0){
+                    continue;
+                }
+                if ((candidate) % divisor == 0) {
+                    multiples.add(candidate);
+                }
             }
-            number--;
+            candidate--;
         }
-        return accumulator;
+
+        System.out.println(multiples);
+        return multiples.stream().reduce(0, Integer::sum);
     }
 }

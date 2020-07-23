@@ -8,10 +8,12 @@ class HandshakeCalculator {
 
         ArrayList<Signal> handshake = new ArrayList<>();
 
-        for (int i = 0; i <= 3; i++) {
+        for (int i = 0; i < Signal.values().length; i++) {
             if (((number >> i) & 1) == 1) handshake.add(Signal.values()[i]);
         }
-        if (number >= (1 << 4)) Collections.reverse(handshake);
+        if (((number >> 4) & 1) == 1) {
+            Collections.reverse(handshake);
+        }
         return handshake;
     }
 }
