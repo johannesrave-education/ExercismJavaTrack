@@ -5,8 +5,7 @@ class Matrix {
 
     Matrix(String matrixAsString) {
         this.matrix = Arrays.stream(matrixAsString.split("\n"))
-                               .map(x -> x.split(" "))
-                               .map(x -> Arrays.stream(x)
+                               .map(x -> Arrays.stream(x.split(" "))
                                                  .mapToInt(Integer::parseInt)
                                                  .toArray())
                                .toArray(int[][]::new);
