@@ -1,30 +1,24 @@
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 class Matrix {
-    List<String[]> matrix;
+    private int[][] matrix;
 
     Matrix(String matrixAsString) {
         this.matrix = Arrays.stream(matrixAsString.split("\n"))
                                .map(x -> x.split(" "))
-                               .collect(Collectors.toList());
-
-        
-        for (String[] arr : matrix){
-            for (String str : arr){
-                System.out.println(str);
-            }
-        }
-
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+                               .map(x -> Arrays.stream(x)
+                                                 .mapToInt(Integer::parseInt)
+                                                 .toArray())
+                               .toArray(int[][]::new);
     }
 
     int[] getRow(int rowNumber) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return matrix[rowNumber-1];
     }
 
     int[] getColumn(int columnNumber) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return Arrays.stream(matrix)
+                       .mapToInt(x -> x[columnNumber-1])
+                       .toArray();
     }
 }
