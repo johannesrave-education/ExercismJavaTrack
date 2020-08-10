@@ -1,5 +1,3 @@
-import java.util.stream.Collectors;
-
 class MicroBlog {
     public String truncate(String input) {
         
