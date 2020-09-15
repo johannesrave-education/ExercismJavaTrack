@@ -1,22 +1,8 @@
-#*.md
-#*.gradle
-#*.css
-#*.html
-#*.json
+# Ignore files of these formats
 *.class
-#*.bin
-#*.js
-#*.xml
-#*.iml
-#*.idx
+*.jar
 *.classpath
 *.project
-#
-#*/.settings/
-#*/.gradle/
-#*/gradle/
-#/.idea/
-#!build.gradle
 
 # Project exclude paths
 **/build/
@@ -32,3 +18,8 @@
 gradlew
 gradlew.bat
 *.iml
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
