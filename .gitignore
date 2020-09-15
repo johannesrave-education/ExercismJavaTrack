@@ -1,16 +1,34 @@
-*.md
-*.gradle
-*.css
-*.html
-*.json
+#*.md
+#*.gradle
+#*.css
+#*.html
+#*.json
 *.class
-*.bin
-*.js
-*.xml
-*.iml
-*.idx
+#*.bin
+#*.js
+#*.xml
+#*.iml
+#*.idx
 *.classpath
 *.project
+#
+#*/.settings/
+#*/.gradle/
+#*/gradle/
+#/.idea/
+#!build.gradle
 
-*/.settings/
-/.idea/
+# Project exclude paths
+**/build/
+**/gradle/
+**/.exercism/
+**/.gradle/
+**/.idea/
+**/.settings/
+**/bin/
+
+# Excluded files in challenges
+#build.gradle.kts
+gradlew
+gradlew.bat
+*.iml
