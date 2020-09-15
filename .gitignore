@@ -12,14 +12,13 @@
 **/.idea/
 **/.settings/
 **/bin/
+.gradle
 
 # Excluded files in challenges
 #build.gradle.kts
 gradlew
 gradlew.bat
 *.iml
-# Ignore Gradle project-specific cache directory
-.gradle
 
 # Ignore Gradle build output directory
 build
