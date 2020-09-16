@@ -1,24 +1,28 @@
+import java.util.HashSet;
+
 class PrimeCalculator {
+    
+    HashSet<Integer> knownPrimes = new HashSet<>();
 
     int nth(int nth) {
-        if (nth == 0) throw new IllegalArgumentException();
-        int num = 1;
+        if (nth < 1) throw new IllegalArgumentException();
+        
+        // Starting at 2 to avoid infinite loop. 
+        int num = 2;
+        nth--;
         while (nth >= 0) {
-            if(isPrime(num)){
+            if(isPrime(num++)){
                nth--; 
             }
-            num++;
         }
         return num-1;
     }
 
     public boolean isPrime(int num) {
-        int i = 2;
-        while (i < num / 2 + 1){
-            if (num % i == 0) return false;
-            i++;
+        for (int prime : knownPrimes){
+            if (num % prime == 0) return false;
         }
+        knownPrimes.add(num);
         return true;
     }
-
 }
